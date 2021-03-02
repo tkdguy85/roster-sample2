@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import RosterReducer from './reducers/rosterReducer'
+
+if(localStorage.getItem('roster') == null)
+  localStorage.setItem('roster', JSON.stringify([]))
+let initialState = {
+  currentIndex: -1,
+  list: JSON.parse(localStorage.getItem('roster'))
+}
+const store = createStore(RosterReducer, initialState)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
