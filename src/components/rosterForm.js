@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import * as actions from "../actions/rosterActions"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import './rosterForm.css'
+
 
 //Temp Holder, replace with random# gen or other ID. 
-let badge = 10;
+let badge = 1050
+
+// Status Update
+let working = false;
+function toggle() {
+  working = !working
+} 
 
 class rosterForm extends Component {
 
@@ -15,12 +21,12 @@ class rosterForm extends Component {
 
   returnObjectState() {
     if (this.props.currentIndex === -1)
-      return {
-        idNum: 'ID# ' + badge++,
+     return {
+        idNum: '#' + badge++,
         lastName: '',
         firstName: '',
         initial: '',
-        status: Boolean,
+        status: false,
         dateOfBirth: '',
         dateOfEmployment: ''
         // workStatus: boolean - 'active/inactive'
@@ -34,7 +40,13 @@ class rosterForm extends Component {
       this.setState({ ...this.returnObjectState() })
     }
   }
-
+  /*
+  handleStatus = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+  */
   handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -49,19 +61,24 @@ class rosterForm extends Component {
       this.props.updateRoster(this.state)    
   }
 
+
+
   render() {
     return (
       <form 
         className='form'
         onSubmit={this.handleSubmit} 
         autoComplete='off'>
-        <p 
+
+        <h2>Employee Info:</h2>
+      
+        <h3 
           name='idNum'
           type='number'
           className="idNum"
           onChange={this.handleInputChange}
-          value={this.state.idNum}
-        ></p>
+          value={this.state.idNum}         
+        >ID</h3>
         <input 
           name='lastName'
           type='text'
@@ -82,23 +99,17 @@ class rosterForm extends Component {
           name='initial'
           type='text'
           placeholder='Initial' 
-          className="middleName"
+          className="initial"
+          maxLength='1'
           onChange={this.handleInputChange}
           value={this.state.initial}
         />
-        <input 
-          name='status'
-          type='checkbox'
-          placeholder='Active' 
-          className="middleName"
-          onClick='check'
-          value={this.state.status}
-        />
+        
         <input 
           name='dateOfBirth'
           type='date'
           placeholder='' 
-          className="birthday"
+          className="date"
           onChange={this.handleInputChange}
           value={this.state.dateOfBirth}
         />
@@ -106,14 +117,33 @@ class rosterForm extends Component {
           name='dateOfEmployment'
           type='date'
           placeholder='' 
-          className="startDate"
-          onChange={this.handleInputChange}
+          className="date"
+          
           value={this.state.dateOfEmployment}
         />
+        <button 
+          name='status'
+          type='boolean'
+          placeholder='Active' 
+          className="status"
+          onClick={toggle}
+          onChange={this.handleInputChange}
+          value={this.state.status}
+          >
+            {this.state.value}
+        </button>
         <button
           type='submit'
-          className='submit'>Add Employee
-          </button>
+          className='submit'
+          >
+            Add Employee
+        </button>
+        <button
+          type='reset'
+          className='reset'
+          >
+            Clear
+        </button>
       </form>
     )
   }

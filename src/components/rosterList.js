@@ -17,27 +17,27 @@ class rosterList extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <RosterForm />
-        
+      <div className='main'>
+        <div className="form">
+          <RosterForm />
+        </div>
+
         <div className="sorter">
-            <p>Sort</p>
-            <p>Order</p>
-            <p>Active</p>
+          <p>Sort</p>
         </div>
         
         <table className='table'>
           <thead>
             <tr className='details'>
-              <td className='specs'>ID#</td>
+              <td className='specs'>Badge#</td>
               <td className='specs'>Last Name</td>
               <td className='specs'>First Name</td>
               <td className='specs'>Middle Initial</td>
               <td className='specs'>Birthday</td>
               <td className='specs'>Hire Date</td>
               <td className='specs'>STATUS</td>
-              <td className='specs'>Edit Info</td>
-              <td className='specs'>Remove Info</td>
+              <td className='specs edit'>Edit Info</td>
+              <td className='specs remove'>Remove Info</td>
             </tr>
           </thead>
           
@@ -51,8 +51,8 @@ class rosterList extends Component {
                   <td className='date'>{item.dateOfBirth}</td>
                   <td className='date'>{item.dateOfEmployment}</td>
                   <td className='status'>{item.status}</td>
-
-                  <td>
+                                   
+                  <td className='buttons'>
                     <button 
                       className='mod'
                       onClick={() => 
@@ -61,15 +61,16 @@ class rosterList extends Component {
                         Modify
                     </button>
                   </td>
-                  <td>
+              
+                  <td className="buttons">
                     <button 
-                    className='remove'
+                    className='del'
                     onClick={() => 
                       this.handleRemove(index)}
                     >
                       Remove
                     </button>
-                  </td>
+                  </td>                  
                 </tr>
             })}
           </tbody>

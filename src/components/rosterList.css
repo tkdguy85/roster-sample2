@@ -1,0 +1,123 @@
+/*  Display  */
+
+.main {
+	background-color: rgba(221, 221, 221, 0.767);
+}
+
+tr {
+	flex-direction: row;
+}
+
+input {
+	display: flex;
+	padding: 5rem;
+}
+.sorter {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+
+.details {
+	width: 100vh;
+	flex-direction: row;
+	align-content: center;
+}
+
+.grid tr:nth-child(even) {
+	background-color: grey;
+}
+
+.specs {
+	padding: 1rem 3rem;
+}
+
+.form {
+	display: flex;
+	padding: 1rem 3rem;
+	background-color: green;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.idNum {
+	padding-left: 1rem;
+	border: solid 0.1rem;
+}
+
+.name {
+	padding: 1rem 1rem;
+	border: solid 0.1rem;
+}
+
+.initial {
+	padding: 1rem 1rem;
+	border: solid 0.1rem;
+}
+
+.status {
+	padding: 1rem 1rem;
+	border: solid 0.1rem;
+}
+
+.date {
+	padding: 1rem 1rem;
+	border: solid 0.1rem;
+}
+
+/*  Fonts   */
+
+h2 {
+	color: white;
+	margin: 0.2rem;
+	font-size: 1.2rem;
+}
+
+h3 {
+	display: none;
+}
+
+p {
+	padding: 2rem;
+	border: 0.1rem solid black;
+}
+
+/* BUTTONS */
+
+.buttons {
+	background-color: white;
+}
+
+button {
+	padding: 1rem 3rem;
+}
+
+button:hover {
+	background-color: purple;
+}
+
+.mod {
+	background-color: blue;
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: yellow;
+}
+
+.del {
+	background-color: red;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: yellow;
+}
+
+.submit {
+	padding: 1rem 1rem;
+	border: dashed aliceblue;
+	color: yellow;
+	background-color: yellowgreen;
+}
+
+.submit:hover {
+	background-color: red;
+}
