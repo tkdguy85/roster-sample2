@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import * as actions from "../actions/rosterActions"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -7,11 +7,13 @@ import { bindActionCreators } from 'redux'
 //Temp Holder, replace with random# gen or other ID. 
 let badge = 1050
 
+/* 
 // Status Update
 let working = false;
 function toggle() {
   working = !working
 } 
+*/
 
 class rosterForm extends Component {
 
@@ -26,7 +28,7 @@ class rosterForm extends Component {
         lastName: '',
         firstName: '',
         initial: '',
-        status: false,
+        // status: false, : Different approach
         dateOfBirth: '',
         dateOfEmployment: ''
         // workStatus: boolean - 'active/inactive'
@@ -98,7 +100,7 @@ class rosterForm extends Component {
         <input 
           name='initial'
           type='text'
-          placeholder='Initial' 
+          placeholder='Initial (Optional)' 
           className="initial"
           maxLength='1'
           onChange={this.handleInputChange}
@@ -121,7 +123,7 @@ class rosterForm extends Component {
           
           value={this.state.dateOfEmployment}
         />
-        <button 
+        {/* <button 
           name='status'
           type='boolean'
           placeholder='Active' 
@@ -131,19 +133,19 @@ class rosterForm extends Component {
           value={this.state.status}
           >
             {this.state.value}
-        </button>
+        </button> */ }
         <button
           type='submit'
           className='submit'
           >
             Add Employee
         </button>
-        <button
+        {/* <button
           type='reset'
           className='reset'
           >
             Clear
-        </button>
+        </button> */}
       </form>
     )
   }

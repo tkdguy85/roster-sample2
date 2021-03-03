@@ -5,6 +5,7 @@ import * as actions from "../actions/rosterActions"
 import RosterForm from './rosterForm'
 import './rosterList.css'
 
+
 class rosterList extends Component {
 
   handleEdit = (index) => {
@@ -21,11 +22,11 @@ class rosterList extends Component {
         <div className="form">
           <RosterForm />
         </div>
-
+{/* 
         <div className="sorter">
           <p>Sort</p>
         </div>
-        
+         */}
         <table className='table'>
           <thead>
             <tr className='details'>
@@ -35,7 +36,7 @@ class rosterList extends Component {
               <td className='specs'>Middle Initial</td>
               <td className='specs'>Birthday</td>
               <td className='specs'>Hire Date</td>
-              <td className='specs'>STATUS</td>
+              {/* <td className='specs'>STATUS</td> */}
               <td className='specs edit'>Edit Info</td>
               <td className='specs remove'>Remove Info</td>
             </tr>
@@ -50,7 +51,7 @@ class rosterList extends Component {
                   <td className='initial'>{item.initial}</td>
                   <td className='date'>{item.dateOfBirth}</td>
                   <td className='date'>{item.dateOfEmployment}</td>
-                  <td className='status'>{item.status}</td>
+                  {/* <td className='status'>{item.status}</td> */}
                                    
                   <td className='buttons'>
                     <button 

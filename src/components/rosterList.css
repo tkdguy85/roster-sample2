@@ -62,7 +62,7 @@ input {
 }
 
 .date {
-	padding: 1rem 1rem;
+	padding: 0.9rem 1rem;
 	border: solid 0.1rem;
 }
 
@@ -113,9 +113,11 @@ button:hover {
 
 .submit {
 	padding: 1rem 1rem;
-	border: dashed aliceblue;
+	/* border: 0.1rem solid black; */
 	color: yellow;
-	background-color: yellowgreen;
+	font-size: 0.7rem;
+	font-weight: 900;
+	background-color: blue;
 }
 
 .submit:hover {
