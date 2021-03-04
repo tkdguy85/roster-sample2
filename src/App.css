@@ -1,3 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2rem;
+}
+
+.login {
+	margin: 3rem 3rem;
+	padding: 3rem 3rem;
+	width: 120;
+	font-size: 2rem;
+	color: yellow;
+	background-color: green;
+	cursor: pointer;
+}
+
+.login:hover,
+.logout:hover {
+	background-color: purple;
+	color: yellow;
+}
+
+.logout {
+	margin: 3rem 3rem;
+	padding: 3rem 3rem;
+	width: 120;
+	color: yellow;
+	background-color: red;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.img {
+	width: 200px;
+}
+
+/* 
 .App {
 	text-align: center;
 }
@@ -35,4 +76,4 @@
 	to {
 		transform: rotate(360deg);
 	}
-}
+} */
