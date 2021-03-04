@@ -4,14 +4,6 @@
 	background-color: rgba(221, 221, 221, 0.767);
 }
 
-tr {
-	flex-direction: row;
-}
-
-input {
-	display: flex;
-	padding: 5rem;
-}
 .sorter {
 	display: flex;
 	justify-content: space-around;
@@ -24,26 +16,39 @@ input {
 	align-content: center;
 }
 
-.grid tr:nth-child(even) {
+.grid tr:nth-child(odd) {
 	background-color: grey;
 }
 
 .specs {
-	padding: 1rem 3rem;
+	padding: 0.6rem 1rem;
+	border: solid 0.1rem;
 }
 
 .form {
 	display: flex;
-	padding: 1rem 3rem;
+	padding: 0.4rem 3rem;
 	background-color: green;
 	text-align: center;
 	align-items: center;
 	justify-content: space-between;
 }
+/*  TABLE  */
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.grid {
+	border: solid 0.1rem;
+}
 
 .idNum {
-	padding-left: 1rem;
 	border: solid 0.1rem;
+}
+.idNum h3 {
+	font-weight: bold;
 }
 
 .name {
@@ -67,6 +72,11 @@ input {
 }
 
 /*  Fonts   */
+h1 {
+	font-size: 1rem;
+	font-weight: bold;
+	color: gold;
+}
 
 h2 {
 	color: white;
@@ -78,48 +88,78 @@ h3 {
 	display: none;
 }
 
-p {
-	padding: 2rem;
-	border: 0.1rem solid black;
-}
-
 /* BUTTONS */
 
 .buttons {
-	background-color: white;
+	background-color: rgba(221, 221, 221, 0.767);
 }
 
 button {
-	padding: 1rem 3rem;
+	padding: 0.6rem 3rem;
+	cursor: pointer;
 }
 
 button:hover {
 	background-color: purple;
 }
 
-.mod {
+h4 {
+	position: relative;
+}
+
+.tog-active {
+	background-color: rgb(0, 199, 0);
+}
+
+.tog-inactive {
+	background-color: red;
+}
+
+.active {
 	background-color: blue;
-	font-size: 1.5rem;
-	font-weight: 600;
-	color: yellow;
+	padding: 1.5rem 5rem;
+}
+
+.active:hover .inactive:hover {
+	background-color: purple;
+}
+
+.inactive {
+	background-color: rgb(85, 85, 85);
+	padding: 1.5rem 4.6rem;
+}
+
+.mod {
+	background-color: rgb(37, 25, 199);
 }
 
 .del {
 	background-color: red;
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: yellow;
 }
 
 .submit {
 	padding: 1rem 1rem;
 	/* border: 0.1rem solid black; */
-	color: yellow;
-	font-size: 0.7rem;
-	font-weight: 900;
 	background-color: blue;
+	color: yellow;
+	font-size: 0.8rem;
+	font-weight: bold;
 }
 
 .submit:hover {
 	background-color: red;
+}
+
+.show {
+	background-color: blue;
+	padding: 1rem 3.5rem;
+	font-weight: bold;
+	font-size: 0.92rem;
+	color: yellow;
+}
+
+.hide {
+	background-color: rgb(85, 85, 85);
+	padding: 1rem 3.5rem;
+	color: red;
 }

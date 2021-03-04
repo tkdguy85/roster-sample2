@@ -120,7 +120,7 @@ class rosterForm extends Component {
           type='date'
           placeholder='' 
           className="date"
-          
+          onChange={this.handleInputChange}
           value={this.state.dateOfEmployment}
         />
         {/* <button 

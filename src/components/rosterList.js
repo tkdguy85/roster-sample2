@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux'
 import * as actions from "../actions/rosterActions" 
 import RosterForm from './rosterForm'
 import './rosterList.css'
-
+import Toggle from './buttonToggle'
+import Activate from './rosterButton'
 
 class rosterList extends Component {
 
@@ -15,6 +16,8 @@ class rosterList extends Component {
   handleRemove = (index) => {
     this.props.removeRoster(index)
   }
+
+  
 
   render() {
     return (
@@ -27,54 +30,57 @@ class rosterList extends Component {
           <p>Sort</p>
         </div>
          */}
-        <table className='table'>
+         
+        <table className='table'>         
           <thead>
             <tr className='details'>
+              <Toggle />
               <td className='specs'>Badge#</td>
               <td className='specs'>Last Name</td>
               <td className='specs'>First Name</td>
               <td className='specs'>Middle Initial</td>
               <td className='specs'>Birthday</td>
               <td className='specs'>Hire Date</td>
-              {/* <td className='specs'>STATUS</td> */}
-              <td className='specs edit'>Edit Info</td>
-              <td className='specs remove'>Remove Info</td>
+              <td className='specs'>Edit Info</td>
+              <td className='specs'>Remove Info</td>
             </tr>
           </thead>
-          
+        
           <tbody className='grid'>
             {this.props.list.map((item, index) => {
               return <tr key={index}>
-                  <td className='id'>{item.idNum}</td>
-                  <td className='name'>{item.lastName}</td>
-                  <td className='name'>{item.firstName}</td>
-                  <td className='initial'>{item.initial}</td>
-                  <td className='date'>{item.dateOfBirth}</td>
-                  <td className='date'>{item.dateOfEmployment}</td>
-                  {/* <td className='status'>{item.status}</td> */}
-                                   
-                  <td className='buttons'>
+                  
+                  <Activate />
+                  
+                  <td className='specs'>{item.idNum}</td>
+                  <td className='specs'>{item.lastName}</td>
+                  <td className='specs'>{item.firstName}</td>
+                  <td className='specs'>{item.initial}</td>
+                  <td className='specs'>{item.dateOfBirth}</td>
+                  <td className='specs'>{item.dateOfEmployment}</td>
+
+                  <td className='specs buttons'>
                     <button 
                       className='mod'
                       onClick={() => 
                         this.handleEdit(index)}
                       >
-                        Modify
+                        <h1>MODIFY</h1>
                     </button>
                   </td>
               
-                  <td className="buttons">
+                  <td className="specs buttons">
                     <button 
                     className='del'
-                    onClick={() => 
+                    onDoubleClick={() => 
                       this.handleRemove(index)}
                     >
-                      Remove
+                      <h1>REMOVE</h1>
                     </button>
                   </td>                  
                 </tr>
             })}
-          </tbody>
+          </tbody>          
         </table>
       </div>
     )
